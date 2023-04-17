@@ -1,0 +1,76 @@
+from google.colab import drive
+drive.mount('/content/drive/')
+
+import pandas as pd
+df=pd.read_csv('/content/drive/MyDrive/Student_Marks.csv')
+df.head()
+
+#Mean
+import pandas as pd
+mean1 = df['Marks'].mean()
+print(mean1)
+
+#Max
+import pandas as pd
+max1 = df['Marks'].max()
+print(max1)
+
+#Min
+import pandas as pd
+min1 = df['Marks'].min()
+print(min1)
+
+#Median
+import pandas as pd
+median1 = df['Marks'].median()
+print(median1)
+
+#Standard deviation
+import pandas as pd
+std1 = df['Marks'].std()
+print(std1)
+
+#Varience
+import pandas as pd
+var1 = df['Marks'].var()
+print(var1)
+
+#Mode
+import pandas as pd
+mode1 = df['number_courses'].mode()
+print(mode1)
+
+#Sorting
+import pandas as pd
+sorted_df = df.sort_values(by=['Marks'], ascending=True)
+print(sorted_df)
+
+#Count
+import pandas as pd
+count1 = df['Marks'].count()
+print(count1)
+
+#Filtering
+import pandas as pd
+df.filter(["number_courses"])
+
+#Grouping
+import pandas as pd
+gk = df.groupby('number_courses')
+gk.first()
+
+#Aggregate
+import pandas as pd
+df.aggregate(['sum', 'min'])
+
+#Aggregate
+import pandas as pd
+df.aggregate({"number_courses":['sum', 'min'],
+              "Marks":['max',]})
+
+#comparision
+import pandas as pd
+new = df["number_courses"] == "3"
+df["New"]= new
+df
+
