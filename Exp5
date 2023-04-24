@@ -1,0 +1,74 @@
+importing required modules
+[1]
+from PIL import Image
+import numpy as np
+from matplotlib import pyplot as plt
+Croping an image
+Cropping is one of the important operations of the image processing to remove unwanted portions of an image as well as to add required features to an image. It is widely used process in web applications, for uploading an image.
+
+The crop() function of the image class in Pillow requires the portion to be cropped as rectangle. The rectangle portion to be cropped from an image is specified as a four-element tuple and returns the rectangle portion of the image that has been cropped as an image Object.
+
+[14]
+0s
+#Before croping
+intial=Image.open('/content/drive/MyDrive/ai.jpg')
+intial.show()
+
+[3]
+18s
+from google.colab import drive
+drive.mount('/content/drive')
+Mounted at /content/drive
+[6]
+#After croping
+cropped=intial.crop((10,5,200,200)) 
+cropped.show()
+
+[9]
+cropped.save('/content/drive/MyDrive/ai.jpg')
+[8]
+intial.save('/content/drive/MyDrive/ai.jpg')
+version of pillow
+[10]
+0s
+Image.__version__
+
+Flip and Rotate Image
+While working on images using python image processing library, there are instances where you need to flip an existing image to get some more insights out of it, to enhance its visibility or because of your requirement.
+
+Image module of the pillow library allows us to flip an image very easily. We are going to use the transpose (method) function from the Image module for flipping the images. Some of the mostly commonly used methods supported by ‘transpose()’ are −
+
+Image.FLIP_LEFT_RIGHT − For flipping the image horizontally
+
+Image.FLIP_TOP_BOTTOM − For flipping the image vertically
+
+Image.ROTATE_90 − For rotating the image by specifying degree
+
+Horizontal Fliping
+[11]
+0s
+horflip=Image.open("/content/drive/MyDrive/ai.jpg")
+horflip.show()
+print("\n After Rotationg left to Right\n")
+horizontal=horflip.transpose(Image.FLIP_LEFT_RIGHT)
+horizontal.show()
+
+vertical fliping
+[12]
+0s
+ver=Image.open('/content/drive/MyDrive/ai.jpg')
+ver.show()
+print("\nAfter rotating top to bottom ...\n")
+vertical=ver.transpose(Image.FLIP_TOP_BOTTOM)
+vertical.show()
+
+Rotate Image by a specified degree
+[17]
+1s
+deg=Image.open('/content/drive/MyDrive/ai.jpg')
+deg.show()
+print("\n After Rotating image By a specified...\n")
+degree=deg.transpose(Image.ROTATE_90)
+degree.show()
+
+[ ]
